@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+test/**
+.gitignore
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json
+
+typings/**
+test/**
+.editorconfig
+.gitignore
+.travis.yml
+jsconfig.json
