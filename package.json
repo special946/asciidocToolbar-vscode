@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:asciidocToolbar.bold"
+		"onCommand:asciidocToolbar.bold",
+		"onCommand:asciidocToolbar.italic"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -35,8 +36,17 @@
 				"title": "AsciidocToolbar.Bold",
 				"category": "Other",
 				"icon": {
-					"light": "./media/bold-text-option.svg",
-					"dark": "./media/bold-text-option.svg"
+					"light": "./media/bold-text-option-light.svg",
+					"dark": "./media/bold-text-option-dark.svg"
+				}
+			},
+			{
+				"command": "asciidocToolbar.italic",
+				"title": "AsciidocToolbar.Italic",
+				"category": "Other",
+				"icon": {
+					"light": "./media/italic-text-option-light.svg",
+					"dark": "./media/italic-text-option-dark.svg"
 				}
 			}
 		],
@@ -44,6 +54,11 @@
 			"editor/title": [
 				{
 					"command": "asciidocToolbar.bold",
+					"when": "editorLangId == asciidoc",
+					"group": "navigation"
+				},
+				{
+					"command": "asciidocToolbar.italic",
 					"when": "editorLangId == asciidoc",
 					"group": "navigation"
 				}
@@ -60,5 +75,8 @@
 		"eslint": "^5.13.0",
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"encoding": "^0.1.12"
 	}
 }
