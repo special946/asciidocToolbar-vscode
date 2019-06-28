@@ -3,6 +3,11 @@
 	"displayName": "asciidocToolbar",
 	"description": "Toolbar for AsciiDoctor",
 	"version": "0.0.1",
+	"publisher": "special946",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/special946/asciidocToolbar-vscode.git"
+	  },
 	"engines": {
 		"vscode": "^1.35.0"
 	},
