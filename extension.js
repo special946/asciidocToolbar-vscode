@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-//var encoding = require('encoding');
+var fs = require('fs');
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -10,19 +10,32 @@ function activate(context) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "asciidocToolbar-vscode" is now active!');
 
-	//var result = encoding.convert('ÕÄÖÜ', 'UTF-8', 'Latin_1', false);
-	//console.log(result.toString());
+	var disposable = vscode.commands.registerCommand('extension.encdetect', function () {
+	});
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	//let disposable = vscode.commands.registerCommand('extension.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+	vscode.workspace.onDidOpenTextDocument(function(e){
+		var fname = e.fileName.replace(/\\/g,'/');
 
-		// Display a message box to the user
-		//vscode.window.showInformationMessage('Hello World!');
-	//});
-	//context.subscriptions.push(disposable);
+		fs.readFile(fname, function (err, text) {
+			if (text.length == 0){
+				return;
+			}
+			console.log(text[0].toString(16));
+			console.log(text[1].toString(16));
+			console.log(text[2].toString(16));
+
+			if(text[0].toString(16) == 'ef' && text[1].toString(16) == 'bb' && text[2].toString(16) == 'bf'){
+				var mes = '';
+				mes = "File encoding not UTF-8!!";
+				vscode.window.showWarningMessage(mes);
+				console.log(mes);
+			}
+
+		});
+
+	});
+
+	context.subscriptions.push(disposable);
 
 	const bold = vscode.commands.registerTextEditorCommand('asciidocToolbar.bold', (textEditor) => {
 		var start = textEditor.selection.start;

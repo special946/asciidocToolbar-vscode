@@ -11,7 +11,8 @@
 	],
 	"activationEvents": [
 		"onCommand:asciidocToolbar.bold",
-		"onCommand:asciidocToolbar.italic"
+		"onCommand:asciidocToolbar.italic",
+		"*"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -48,6 +49,10 @@
 					"light": "./media/italic-text-option-light.svg",
 					"dark": "./media/italic-text-option-dark.svg"
 				}
+			},
+			{
+				"command": "extension.encdetect",
+				"title": "encdetect"
 			}
 		],
 		"menus": {
@@ -77,6 +82,6 @@
 		"@types/mocha": "^2.2.42"
 	},
 	"dependencies": {
-		"encoding": "^0.1.12"
+
 	}
 }
