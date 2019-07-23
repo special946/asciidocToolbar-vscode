@@ -90,6 +90,20 @@ function activate(context) {
 	});
 	context.subscriptions.push(italic);
 
+
+	const underline = vscode.commands.registerTextEditorCommand('asciidocToolbar.underline', (textEditor) => {
+		var start = textEditor.selection.start;
+		var end = textEditor.selection.end;
+
+		textEditor.edit((editBuilder) => {
+			editBuilder.insert(textEditor.selection.start, "[.underline]#");
+			editBuilder.insert(textEditor.selection.end, "#");
+		});
+
+		//textEditor.selection = new vscode.Selection(start.translate(0, 1), end.translate(0, 1));
+	});
+	context.subscriptions.push(underline);
+
 	/*
 	function insertSymbol(textEditor, position, symbol)
 	{

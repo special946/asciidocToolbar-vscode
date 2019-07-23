@@ -2,7 +2,7 @@
 	"name": "asciidocToolbar-vscode",
 	"displayName": "asciidocToolbar",
 	"description": "Toolbar for AsciiDoctor",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "special946",
 	"repository": {
 		"type": "git",
@@ -17,6 +17,7 @@
 	"activationEvents": [
 		"onCommand:asciidocToolbar.bold",
 		"onCommand:asciidocToolbar.italic",
+		"onCommand:asciidocToolbar.underline",
 		"*"
 	],
 	"main": "./extension.js",
@@ -39,7 +40,7 @@
 		"commands": [
 			{
 				"command": "asciidocToolbar.bold",
-				"title": "AsciidocToolbar.Bold",
+				"title": "Bold",
 				"category": "Other",
 				"icon": {
 					"light": "./media/bold-text-option-light.svg",
@@ -48,11 +49,20 @@
 			},
 			{
 				"command": "asciidocToolbar.italic",
-				"title": "AsciidocToolbar.Italic",
+				"title": "Italic",
 				"category": "Other",
 				"icon": {
 					"light": "./media/italic-text-option-light.svg",
 					"dark": "./media/italic-text-option-dark.svg"
+				}
+			},
+			{
+				"command": "asciidocToolbar.underline",
+				"title": "Underline",
+				"category": "Other",
+				"icon": {
+					"light": "./media/underline-text-option-light.svg",
+					"dark": "./media/underline-text-option-dark.svg"
 				}
 			},
 			{
@@ -69,6 +79,11 @@
 				},
 				{
 					"command": "asciidocToolbar.italic",
+					"when": "editorLangId == asciidoc",
+					"group": "navigation"
+				},
+				{
+					"command": "asciidocToolbar.underline",
 					"when": "editorLangId == asciidoc",
 					"group": "navigation"
 				}
