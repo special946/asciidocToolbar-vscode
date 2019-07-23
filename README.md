@@ -12,9 +12,19 @@
 
 ## Known Issues
 
+### Test build
+
+cd asciidocToolbar-vscode
+
+vsce package
+
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.2
+
+Added underline command
+
+### 0.0.1
 
 Initial release of ...
