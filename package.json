@@ -75,17 +75,17 @@
 				{
 					"command": "asciidocToolbar.bold",
 					"when": "editorLangId == asciidoc",
-					"group": "navigation"
+					"group": "navigation@1"
 				},
 				{
 					"command": "asciidocToolbar.italic",
 					"when": "editorLangId == asciidoc",
-					"group": "navigation"
+					"group": "navigation@2"
 				},
 				{
 					"command": "asciidocToolbar.underline",
 					"when": "editorLangId == asciidoc",
-					"group": "navigation"
+					"group": "navigation@3"
 				}
 			]
 		}
