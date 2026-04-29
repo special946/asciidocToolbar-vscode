@@ -86,7 +86,7 @@
         "otaHeaderString": "Custom devices (DiY):LYWSD03MMC",
         "modelId": "LYWSD03MMC",
         "manufacturerName": [
-            "Xiaomi"
+            "Custom devices (DiY)"
         ],
         "url": "https://github.com/pvvx/ZigbeeTLc/raw/refs/heads/master/bin/1141-020a-01363001-Z03MMC.zigbee"
     },
