@@ -83,7 +83,7 @@
         "manufacturerCode": 4417,
         "imageType": 522,
         "sha512": "5b28281e52e1410c27df8a3ddb58779ca6a1eb8a941e7f551e939e529773011dd1101dc4b34c025413bc0d3e2f3beed1743f4f4bd41005447e861c2da25a0984",
-        "otaHeaderString": "Xiaomi:LYWSD03MMC",
+        "otaHeaderString": "Custom devices (DiY):LYWSD03MMC",
         "modelId": "LYWSD03MMC",
         "manufacturerName": [
             "Xiaomi"
